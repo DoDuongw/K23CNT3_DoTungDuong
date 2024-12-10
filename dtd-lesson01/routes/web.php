@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DtdAccountController;
+use App\Http\Controllers\DtdKhoaController;
 use App\Http\Controllers\DtdSessionController;
 use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Route;
@@ -49,4 +50,12 @@ Route::get('/duong/{id}',function($id){
 Route ::get('/dtd-session/get',[DtdSessionController ::class,'dtdGetSessionData'])->name(name: 'dtdsession.get');
 Route ::get('/dtd-session/set',[DtdSessionController ::class,'dtdStoreSessionData'])->name(name: 'dtdsession.set');
 Route ::get('/dtd-session/delete',[DtdSessionController ::class,'dtdDeleteSessionData'])->name(name: 'dtdsession.delete');
+
+// Khoa
+Route ::get(uri: '/dtdKhoa',action: [DtdKhoaController ::class,'dtdGetAllKhoa'])->name(name: 'dtdKhoa.dtdGetAllKhoa');
+Route::get('/dtdKhoa/dtdDetail/{dtdMaKH}',
+[DtdKhoaController::class,'dtdGetKhoa'])->name(name: 'dtdKhoa.dtdGetKhoa');
+Route ::get(uri: '/dtdKhoa/dtdEdit/{dtdMaKH}',action: [DtdKhoaController ::class,'dtdEdit'])->name(name: 'dtdKhoa.dtdGEdit');
+
+
 
