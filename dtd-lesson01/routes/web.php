@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\DtdAccountController;
+use App\Http\Controllers\DtdSessionController;
+use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,5 +20,33 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/greeting', function () {
-    return "<h1>AyaTsuki</h1>";
+    return "<h1>Hello world, Duong</h1>";
 });
+
+#Redirect
+Route::redirect("/here","three");
+Route::get('/three', function () {
+    return "<h1>Redirect to three</h1>";
+});
+
+#Router return view
+Route::get('/duong', function () {
+    return view('duong');
+});
+// DTD account login
+route::get('/dtd-account',action: [DtdAccountController ::class,'index'])->name('dtdAccount.index');
+Route   ::get('/dtd-account-create',action: [DtdAccountController ::class,'create'])->name('dtdAccount.create');
+Route ::get('/dtd-account-show-data',action: [DtdAccountController ::class,'dtdShowData'])->name('dtdAccount.dtdShowData');
+Route ::get('/dtd-account-list-data',action: [DtdAccountController ::class,'dtdlist'])->name('dtdAccount.dtdlist');
+Route ::get('/dtd-account-list',action: [DtdAccountController ::class,'dtdGetAll'])->name('dtdAccount.dtdGetAll');
+Route ::get('/dtd-login',[DtdAccountController ::class,'dtdLogin'])->name(  name: 'dtdAccount.dtdlogin');
+Route ::post('/dtd-login',[DtdAccountController ::class,'dtdLoginSubmit'])->name(  name: 'dtdAccount.dtdloginsubmit');
+
+#Router parameter
+Route::get('/duong/{id}',function($id){
+    return "<h1> duong".$id ."</h1>";
+});
+Route ::get('/dtd-session/get',[DtdSessionController ::class,'dtdGetSessionData'])->name(name: 'dtdsession.get');
+Route ::get('/dtd-session/set',[DtdSessionController ::class,'dtdStoreSessionData'])->name(name: 'dtdsession.set');
+Route ::get('/dtd-session/delete',[DtdSessionController ::class,'dtdDeleteSessionData'])->name(name: 'dtdsession.delete');
+
