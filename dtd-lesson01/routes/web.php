@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DtdAccountController;
 use App\Http\Controllers\DtdKhoaController;
+use App\Http\Controllers\DtdMonHocController;
 use App\Http\Controllers\DtdSessionController;
 use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Route;
@@ -56,6 +57,16 @@ Route ::get(uri: '/dtdKhoa',action: [DtdKhoaController ::class,'dtdGetAllKhoa'])
 Route::get('/dtdKhoa/dtdDetail/{dtdMaKH}',
 [DtdKhoaController::class,'dtdGetKhoa'])->name(name: 'dtdKhoa.dtdGetKhoa');
 Route ::get(uri: '/dtdKhoa/dtdEdit/{dtdMaKH}',action: [DtdKhoaController ::class,'dtdEdit'])->name(name: 'dtdKhoa.dtdGEdit');
+Route ::post(uri: '/dtdKhoa/dtdEdit',action: [DtdKhoaController ::class,'dtdEditSubmit'])->name(name: 'dtdKhoa.dtdGEditSubmit');
+ 
+// #Khoa - Insert
+Route ::get(uri: '/dtdKhoa/dtdInsert',action: [DtdKhoaController ::class,'dtdInsert'])->name(name: 'dtdKhoa.dtdInsert');
+Route ::post(uri: '/dtdKhoa/dtdInsert',action: [DtdKhoaController ::class,'dtdInsertSubmit'])->name(name: 'dtdKhoa.dtdInsertSubmit');
+
+//kHOA - DELETE
+Route ::get(uri: '/dtdKhoa/dtdDelete/{dtdMaKH}',action: [DtdKhoaController ::class,'dtdDelete'])->name(name: 'dtdKhoa.dtdDelete');
+//MONHOC - List
+Route ::get(uri: '/dtdMonHoc',action: [DtdMonHocController ::class,'dtdList'])->name(name:'dtdMonHoc.dtdList');
 
 
 

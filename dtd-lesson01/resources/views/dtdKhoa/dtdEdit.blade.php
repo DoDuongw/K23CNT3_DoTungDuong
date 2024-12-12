@@ -11,7 +11,8 @@
 <body>
     <body>
         <section class="container my-3">
-            <form action=""method = 'post'>
+            <form action="{{route('dtdKhoa.dtdGEditSubmit')}}"method = 'post'>
+                @csrf
         <div class="card">
             <div class="card-header">
                     <h3>Thông tin chi tiết khoa cần chỉnh sửa </h3>
@@ -27,7 +28,8 @@
                 <input type="text" readonly class="form-control" id="dtdTenKH"name ="dtdTenKH" value="{{$dtdKhoa->dtdTenKH}}">
               </div>
             <div class="card-footer">
-                <a href="/dtdKhoa" class="btn btn-primary">Back</a>
+                <BUTton class="btn btn-primary mx-2">Submit</BUTton>
+                <a href="/dtdKhoa" class="btn btn-secondảy">Back</a>
              </div>
           </div>
      </section>
