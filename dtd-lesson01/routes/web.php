@@ -4,6 +4,7 @@ use App\Http\Controllers\DtdAccountController;
 use App\Http\Controllers\DtdKhoaController;
 use App\Http\Controllers\DtdMonHocController;
 use App\Http\Controllers\DtdSessionController;
+use App\Http\Controllers\DtdSinhVienController;
 use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Route;
 
@@ -67,6 +68,11 @@ Route ::post(uri: '/dtdKhoa/dtdInsert',action: [DtdKhoaController ::class,'dtdIn
 Route ::get(uri: '/dtdKhoa/dtdDelete/{dtdMaKH}',action: [DtdKhoaController ::class,'dtdDelete'])->name(name: 'dtdKhoa.dtdDelete');
 //MONHOC - List
 Route ::get(uri: '/dtdMonHoc',action: [DtdMonHocController ::class,'dtdList'])->name(name:'dtdMonHoc.dtdList');
+//sinh vien - list
+route ::get(uri: '/dtdSinhVien',action: [DtdSinhVienController::class,'dtdList'])->name(name:'dtdSinhVien.dtdList');
+route ::get(uri: '/dtdsinhvien/dtdCreate',action: [DtdSinhVienController::class,'dtdCreate'])->name(name:'dtdSinhVien.dtdCreate');
+route ::get(uri: '/dtdsinhvien/dtdCreate',action: [DtdSinhVienController::class,'dtdCreateSubmit'])->name(name:'dtdSinhVien.dtdCreateSubmit');
+
 
 
 
