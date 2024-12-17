@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB; 
 use Faker\factory as Faker;
 class DtdNhaCCTableSeeder extends Seeder
 {
@@ -20,7 +21,7 @@ class DtdNhaCCTableSeeder extends Seeder
                 // 'MaNCC'=>$faker->word(15),
                 'dtdTenNCC'=>$faker->sentence(5),
                 'dtdDiachi'=>$faker->address(),
-                'dtdDienthoai'=>$faker->phoneNumber(10),
+                'dtdDienthoai'=>$faker->phoneNumber(15),
                 'dtdemail'=>$faker->email(),
                 'dtdstatus'=>$faker->boolean()
                 ]);

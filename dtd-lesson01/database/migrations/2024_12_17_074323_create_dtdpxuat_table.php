@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('dtdnhacc', function (Blueprint $table) {
-
+        Schema::create('dtdpxuat', function (Blueprint $table) {
+            $table->string('dtdSoPX', 255)->primary(); // Cùng kiểu và độ dài
+            $table->date('dtdNgayXuat');
+            $table->string('dtdTenKH', 100);
+            $table->timestamps();
         });
+        
     }
 
     /**
@@ -21,8 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('dtdnhacc', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('dtdpxuat');
     }
 };

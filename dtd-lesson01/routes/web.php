@@ -3,8 +3,10 @@
 use App\Http\Controllers\DtdAccountController;
 use App\Http\Controllers\DtdKhoaController;
 use App\Http\Controllers\DtdMonHocController;
+use App\Http\Controllers\DtdNhaCCController;
 use App\Http\Controllers\DtdSessionController;
 use App\Http\Controllers\DtdSinhVienController;
+use App\Models\DtdNhaCC;
 use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Route;
 
@@ -72,7 +74,8 @@ Route ::get(uri: '/dtdMonHoc',action: [DtdMonHocController ::class,'dtdList'])->
 route ::get(uri: '/dtdSinhVien',action: [DtdSinhVienController::class,'dtdList'])->name(name:'dtdSinhVien.dtdList');
 route ::get(uri: '/dtdsinhvien/dtdCreate',action: [DtdSinhVienController::class,'dtdCreate'])->name(name:'dtdSinhVien.dtdCreate');
 route ::get(uri: '/dtdsinhvien/dtdCreate',action: [DtdSinhVienController::class,'dtdCreateSubmit'])->name(name:'dtdSinhVien.dtdCreateSubmit');
-
+//LIST Nhacc
+route ::get(uri: '/dtdNhaCC',action: [DtdNhaCCController::class,'List'])->name(name:'DtdNhaCC.List');
 
 
 
