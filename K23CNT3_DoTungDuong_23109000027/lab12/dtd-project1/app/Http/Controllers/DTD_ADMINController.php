@@ -14,4 +14,8 @@ class DTD_ADMINController extends Controller
     public function dtdloginSubmit(){
         return view('dtdLogin.dtd-login');
     }
+    public function dtdshowdata(){
+        $data = array ('2310900027','Đỗ Tùng Dương');
+        return view(view: 'dtdLogin.dtd-account-showdata',data: ['dtdData'=> $data]);
+    }
 }

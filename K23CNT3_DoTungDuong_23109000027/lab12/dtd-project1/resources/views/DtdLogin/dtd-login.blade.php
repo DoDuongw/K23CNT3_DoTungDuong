@@ -12,8 +12,7 @@
         <form action="{{route('admin.dtdLoginSubmit')}}"method="post">
             @csrf
             <div class="card-header">
-                <h1> Dtd - Login</h1>
-
+                <h1> Trang Đăng Nhập</h1>
             </div>
 
             <div class="card-body">
@@ -36,15 +35,10 @@
                     @error('dtdPassword')
                     <span class="text-danger">{{$message}}</span>
                     @enderror
-                   
-
                   </div>
             </div>
-
             <div class="card-footer">
                 <button class="btn btn primary" >Xác Nhận</button>
-              
-            
         </div>
         </form>
     </section>
